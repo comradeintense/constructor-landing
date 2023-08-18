@@ -22,10 +22,14 @@ module.exports = {
 		},
 		extend: {
 			colors: {
-				accent: '#76A9FA',
+				accent: '#2CA6FE',
+				'gri-text': '#212121',
 			},
 			fontFamily: {
 				poppins: ['Poppins', 'sans-serif'],
+			},
+			backgroundImage: {
+				'imagine-hero': "url('/public/images/renovation.avif')",
 			},
 		},
 	},
