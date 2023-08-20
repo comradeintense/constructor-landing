@@ -1,0 +1,21 @@
+---
+---
+
+<div class="max-w-lg rounded-[.75rem] shadow-md bg-white h-full flex flex-col">
+	<slot name="card_image" />
+
+	<div class="flex flex-col justify-between items-center text-center flex-grow px-6 py-7 gap-8">
+		<div>
+			<slot name="card_title" />
+			<slot name="card_description" />
+		</div>
+		<div class="mt-auto">
+			<button
+				type="button"
+				class="px-2 py-3 w-full font-semibold rounded-xl text-gri-text text-[.75rem] border-gray-600 border-2 hover:bg-gray-800 hover:text-white"
+			>
+				Află mai multe
+			</button>
+		</div>
+	</div>
+</div>

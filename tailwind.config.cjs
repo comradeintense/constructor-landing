@@ -31,6 +31,11 @@ module.exports = {
 			backgroundImage: {
 				'imagine-hero': "url('/public/images/renovation.avif')",
 			},
+			letterSpacing: {
+				subtitle: '.0141rem',
+				h3title: '-0.0238rem',
+				'8years': '.0594rem',
+			},
 		},
 	},
 	plugins: [],
