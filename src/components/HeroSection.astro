@@ -1,7 +1,10 @@
 ---
+import { Image } from 'astro:assets';
+import backgroundIMG from '../assets/backgroundhero.jpg';
 ---
 
-<section class="relative bg-imagine-hero bg-cover bg-center bg-no-repeat">
+<section class="relative bg-cover bg-center bg-no-repeat">
+	<Image slot="card_image" src={backgroundIMG} format="avif" quality={'mid'} alt="imagine fundal" class="absolute inset-0 w-full h-full object-cover z-0" />
 	<div class="absolute inset-0 bg-black/75 sm:bg-transparent sm:from-black/90 sm:to-black/30 sm:bg-gradient-to-r"></div>
 
 	<div class="container">
@@ -23,7 +26,7 @@
 					</a>
 					<a
 						href="#"
-						class="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-accent shadow hover:text-blue-500 focus:outline-none focus:ring active:text-accent sm:w-auto"
+						class="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-accent shadow hover:text-blue-500 hover:bg-gray-100 focus:outline-none focus:ring active:text-accent sm:w-auto"
 					>
 						Cere oferta
 					</a>

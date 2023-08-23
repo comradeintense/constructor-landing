@@ -1,5 +1,12 @@
 ---
 import Card from './Card.astro';
+import electricity from '../assets/electricitatePS.jpg';
+import vopsit from '../assets/vopsit.jpg';
+import termostat from '../assets/termostat.jpg';
+import pereti from '../assets/pereti.jpg';
+import parchet from '../assets/parchet.jpg';
+import instalatii from '../assets/instalatii.jpg';
+import { Image } from 'astro:assets';
 ---
 
 <section class="my-24 container">
@@ -10,42 +17,84 @@ import Card from './Card.astro';
 	<!-- ! carduri -->
 	<div class="mt-8 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-6 mx-auto place-items-center xs:place-items-stretch">
 		<Card>
-			<img slot="card_image" src="/public/images/baie.avif" alt="" class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500" />
+			<Image
+				slot="card_image"
+				src={instalatii}
+				format="avif"
+				quality={'mid'}
+				alt="imagine parchet"
+				class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"
+			/>
 			<h3 slot="card_title" class="text-gri-text font-bold text-[1.25rem]">Baie & Instalații</h3>
 			<p slot="card_description" class="text-gray-500 font-normal text-base mt-4">
 				Oferim servicii de instalare și renovare pentru băi, asigurând funcționalitate și estetică de top.
 			</p>
 		</Card>
 		<Card>
-			<img slot="card_image" src="/public/images/zugravit.avif" alt="" class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500" />
+			<Image
+				slot="card_image"
+				src={vopsit}
+				format="avif"
+				quality={'mid'}
+				alt="imagine parchet"
+				class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"
+			/>
 			<h3 slot="card_title" class="text-gri-text font-bold text-[1.25rem]">Zugrăvit & Decorare</h3>
 			<p slot="card_description" class="text-gray-500 font-normal text-base mt-4">
 				Transformă-ți spațiul cu serviciile noastre profesionale de zugrăvit și decorare.
 			</p>
 		</Card>
 		<Card>
-			<img slot="card_image" src="/public/images/termostat.avif" alt="" class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500" />
+			<Image
+				slot="card_image"
+				src={termostat}
+				format="avif"
+				quality={'mid'}
+				alt="imagine parchet"
+				class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"
+			/>
 			<h3 slot="card_title" class="text-gri-text font-bold text-[1.25rem]">Climatizare</h3>
 			<p slot="card_description" class="text-gray-500 font-normal text-base mt-4">
 				Soluții moderne de încălzire, aer condiționat și ventilație pentru confortul tău.
 			</p>
 		</Card>
 		<Card>
-			<img slot="card_image" src="/public/images/wallrepair.avif" alt="" class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500" />
+			<Image
+				slot="card_image"
+				src={pereti}
+				format="avif"
+				quality={'mid'}
+				alt="imagine parchet"
+				class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"
+			/>
 			<h3 slot="card_title" class="text-gri-text font-bold text-[1.25rem]">Tavane & Pereți</h3>
 			<p slot="card_description" class="text-gray-500 font-normal text-base mt-4">
 				Specialiști în recondiționat pereți și plafoane din gips-carton de cea mai bună calitate.
 			</p>
 		</Card>
 		<Card>
-			<img slot="card_image" src="/public/images/pardoseli.avif" alt="" class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500" />
+			<Image
+				slot="card_image"
+				src={parchet}
+				format="avif"
+				quality={'mid'}
+				alt="imagine parchet"
+				class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"
+			/>
 			<h3 slot="card_title" class="text-gri-text font-bold text-[1.25rem]">Izolație & Pardoseli</h3>
 			<p slot="card_description" class="text-gray-500 font-normal text-base mt-4">
 				Protejează-ți casa cu izolație de top și alege din varietatea noastră de pardoseli și parchet.
 			</p>
 		</Card>
 		<Card>
-			<img slot="card_image" src="/public/images/electric.avif" alt="" class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500" />
+			<Image
+				slot="card_image"
+				src={electricity}
+				format="avif"
+				quality={'mid'}
+				alt="imagine panou electric"
+				class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"
+			/>
 			<h3 slot="card_title" class="text-gri-text font-bold text-[1.25rem]">Electricitate & Iluminat</h3>
 			<p slot="card_description" class="text-gray-500 font-normal text-base mt-4">
 				Servicii profesionale de electricitate și soluții moderne de iluminat pentru casa ta.

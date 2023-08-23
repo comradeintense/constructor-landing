@@ -1,29 +1,56 @@
 ---
+import { Icon } from 'astro-icon';
 ---
 
 <section class="my-24 container">
-	<div class="flex gap-12">
-		<!-- ! stanga -->
-		<div class="grid grid-cols-2 grid-rows-2 gap-4 w-1/2">
-			<div class="p-10 rounded-xl border-accent border-2">
+	<div class="flex gap-12 h-full">
+		<!-- ! left -->
+		<div class="grid grid-cols-2 gap-4 w-full">
+			<div class="p-6 rounded-xl border-accent border-2">
 				<p class="text-gri-text font-bold tracking-8years text-[38px]">8+ ani</p>
 				<p class="text-gray-500 font-medium text-base mt-3">Excelență, servicii de top și clienți mulțumiți</p>
 			</div>
-			<img src="/public/images/architect.avif" class="row-span-2 object-cover object-center rounded-xl h-full" />
-			<img src="/public/images/constructionsite.avif" class="object-cover object-center rounded-xl h-full" />
+			<img src="/public/images/architect.avif" class="aspect-[16/9] object-cover rounded-xl row-span-2 h-full" />
+			<img src="/public/images/constructionsite.avif" class="aspect-[4/3] object-cover rounded-xl overflow-hidden" />
 		</div>
 
-		<!-- ! dreapta -->
-		<div class="w-1/2">
+		<!-- ! right -->
+		<div class="flex flex-col justify-between h-full">
 			<div>
 				<p class="text-[15px] tracking-subtitle text-accent font-bold">Despre noi</p>
 				<h2 class="text-gri-text text-[38px] font-bold tracking-h3title">Peste un deceniu de excelență</h2>
 				<p class="text-gray-500 font-normal text-base mt-3">
-					Cu peste 12 ani de experiență în domeniu, ne mândrim cu o creștere continuă și o bază solidă de clienți mulțumiți. Misiunea noastră este să oferim
+					Cu peste 8 ani de experiență în domeniu, ne mândrim cu o creștere continuă și o bază solidă de clienți mulțumiți. Misiunea noastră este să oferim
 					servicii de cea mai înaltă calitate, punând accent pe profesionalism și integritate.
 				</p>
 			</div>
-			<div></div>
+			<!-- ! valori -->
+			<div class="flex flex-col flex-1">
+				<div class="mt-7 grid grid-cols-2 gap-6 mb-4">
+					<div class="flex gap-4 items-center">
+						<Icon name="ic:outline-verified" class="w-5 h-5 text-accent" />
+						<span class="font-bold text-sm">Dedicație</span>
+					</div>
+					<div class="flex gap-4 items-center">
+						<Icon name="ic:outline-verified" class="w-5 h-5 text-accent" />
+						<span class="font-bold text-sm">Servicii la timp</span>
+					</div>
+					<div class="flex gap-4 items-center">
+						<Icon name="ic:outline-verified" class="w-5 h-5 text-accent" />
+						<span class="font-bold text-sm">Creativitate</span>
+					</div>
+					<div class="flex gap-4 items-center">
+						<Icon name="ic:outline-verified" class="w-5 h-5 text-accent" />
+						<span class="font-bold text-sm">Prețuri corecte</span>
+					</div>
+				</div>
+			</div>
+
+			<a
+				href="#"
+				class="inline-block w-auto shrink-0 rounded bg-accent px-12 py-3 text-sm font-medium text-white shadow hover:bg-blue-500 focus:outline-none focus:ring active:bg-accent"
+				>Citește mai multe</a
+			>
 		</div>
 	</div>
 </section>

@@ -29,7 +29,7 @@ module.exports = {
 				poppins: ['Poppins', 'sans-serif'],
 			},
 			backgroundImage: {
-				'imagine-hero': "url('/public/images/renovation.avif')",
+				'imagine-hero': "url('../assets/backgroundhero.jpg')",
 			},
 			letterSpacing: {
 				subtitle: '.0141rem',
