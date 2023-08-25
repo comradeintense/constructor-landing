@@ -1,56 +1,62 @@
 ---
 import { Icon } from 'astro-icon';
+import trafalet from '../assets/trafalet.jpg';
+import arhitect from '../assets/arhitect.jpg';
+import { Image } from 'astro:assets';
 ---
 
 <section class="mt-24 container">
 	<div class="flex gap-12 h-full">
 		<!-- ! left -->
-		<div class="grid grid-cols-2 gap-4 flex-1 h-full">
+		<div class="hidden md:grid md:grid-cols-2 md:gap-4 flex-1">
 			<div class="p-6 rounded-xl border-accent border-2">
 				<p class="text-gri-text font-bold tracking-8years text-[38px]">8+ ani</p>
 				<p class="text-gray-500 font-medium text-base mt-3">Excelență, servicii de top și clienți mulțumiți</p>
 			</div>
-			<img src="/public/images/architect.avif" class="aspect-[16/9] object-cover rounded-xl row-span-2 h-full" />
-			<img src="/public/images/constructionsite.avif" class="aspect-[4/3] object-cover rounded-xl overflow-hidden" />
+			<Image src={arhitect} format="avif" quality={'mid'} class="object-cover rounded-xl row-span-2 h-full" alt="imagine arhitect" />
+			<Image src={trafalet} format="avif" quality={'mid'} class="object-cover rounded-xl overflow-hidden h-full" alt="imagine trafalet" />
 		</div>
 
 		<!-- ! right -->
-		<div class="flex-1 h-full flex flex-col justify-between">
+		<div class="flex-1 flex flex-col justify-between">
 			<div>
-				<p class="text-[15px] tracking-subtitle text-accent font-bold">Despre noi</p>
-				<h2 class="text-gri-text text-[38px] font-bold tracking-h3title">Peste un deceniu de excelență</h2>
-				<p class="text-gray-500 font-normal text-base mt-3">
-					Cu peste 8 ani de experiență în domeniu, ne mândrim cu o creștere continuă și o bază solidă de clienți mulțumiți. Misiunea noastră este să oferim
-					servicii de cea mai înaltă calitate, punând accent pe profesionalism și integritate.
-				</p>
-			</div>
-			<!-- ! valori -->
-			<div class="flex flex-col flex-1">
-				<div class="mt-7 grid grid-cols-2 gap-6 mb-4">
-					<div class="flex gap-4 items-center">
-						<Icon name="ic:outline-verified" class="w-5 h-5 text-accent" />
-						<span class="font-bold text-sm">Dedicație</span>
-					</div>
-					<div class="flex gap-4 items-center">
-						<Icon name="ic:outline-verified" class="w-5 h-5 text-accent" />
-						<span class="font-bold text-sm">Servicii la timp</span>
-					</div>
-					<div class="flex gap-4 items-center">
-						<Icon name="ic:outline-verified" class="w-5 h-5 text-accent" />
-						<span class="font-bold text-sm">Creativitate</span>
-					</div>
-					<div class="flex gap-4 items-center">
-						<Icon name="ic:outline-verified" class="w-5 h-5 text-accent" />
-						<span class="font-bold text-sm">Prețuri corecte</span>
+				<div>
+					<p class="text-[15px] tracking-subtitle text-accent font-bold">Despre noi</p>
+					<h2 class="text-gri-text h2-clamp font-bold tracking-h3title leading-tight">Peste un deceniu de excelență</h2>
+					<p class="text-gray-500 font-normal text-base mt-3">
+						Cu peste 8 ani de experiență în domeniu, ne mândrim cu o creștere continuă și o bază solidă de clienți mulțumiți. Misiunea noastră este să oferim
+						servicii de cea mai înaltă calitate, punând accent pe profesionalism și integritate.
+					</p>
+				</div>
+				<!-- ! valori -->
+				<div class="flex flex-col">
+					<div class="mt-7 grid grid-cols-1 xs:grid-cols-2 xl:grid-cols-1 gap-6 mb-6 md:mb-4">
+						<div class="flex gap-4 items-center">
+							<Icon name="ic:outline-verified" class="w-5 h-5 text-accent" aria-hidden="true" />
+							<span class="font-bold text-sm">Dedicație</span>
+						</div>
+						<div class="flex gap-4 items-center">
+							<Icon name="ic:outline-verified" class="w-5 h-5 text-accent" aria-hidden="true" />
+							<span class="font-bold text-sm">Servicii la timp</span>
+						</div>
+						<div class="flex gap-4 items-center">
+							<Icon name="ic:outline-verified" class="w-5 h-5 text-accent" aria-hidden="true" />
+							<span class="font-bold text-sm">Creativitate</span>
+						</div>
+						<div class="flex gap-4 items-center">
+							<Icon name="ic:outline-verified" class="w-5 h-5 text-accent" aria-hidden="true" />
+							<span class="font-bold text-sm">Prețuri corecte</span>
+						</div>
 					</div>
 				</div>
 			</div>
-
-			<a
-				href="#"
-				class="rounded bg-accent mt-4 px-12 py-3 text-sm font-medium text-white shadow hover:bg-blue-500 focus:outline-none focus:ring active:bg-accent"
-				>Citește mai multe</a
-			>
+			<div class="">
+				<a
+					href="#"
+					class="w-full block rounded text-center md:inline-block bg-accent px-12 py-3 text-sm font-medium text-white shadow hover:bg-blue-500 focus:outline-none focus:ring active:bg-accent sm:w-auto"
+					>Citește mai multe</a
+				>
+			</div>
 		</div>
 	</div>
 </section>

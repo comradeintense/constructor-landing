@@ -9,6 +9,10 @@
 		margin-left: auto;
 		margin-right: auto;
 	}
+
+	.h2-clamp {
+		font-size: clamp(1.75rem, calc(1.45rem + 1.49vw), 2.38rem);
+	}
 }
 
 @layer utilities {
