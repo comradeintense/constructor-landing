@@ -1,9 +1,33 @@
 ---
+// library import
+import { Icon } from 'astro-icon';
+import 'keen-slider/keen-slider.min.css';
+
+const recenzii = [
+	{
+		titlu: 'Serviciu exceptional',
+		recenzie:
+			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab numquam consequatur sit perferendis sapiente consectetur pariatur. Maxime odit facere nesciunt asperiores, nulla nostrum natus. Placeat adipisci accusamus similique suscipit dolore.',
+		nume: 'Izabela Marioara',
+	},
+	{
+		titlu: 'Fantastic nu imi vine a crede',
+		recenzie: 'Trolollol. Placeat adipisci accusamus similique suscipit dolore.',
+		nume: 'Patrunjica Fericita',
+	},
+	{
+		titlu: '3',
+		recenzie: 'Maxime odit facere nesciunt asperiores, nulla nostrum natus. Placeat adipisci accusamus similique suscipit dolore',
+		nume: 'Patrunjica Fericita',
+	},
+];
+
+let currentIndex = 0;
 ---
 
 <section class="my-24 container">
 	<div class="grid grid-cols-[1fr,2fr] gap-12">
-		<!-- ! stanga -->
+		<!-- ? stanga -->
 		<div class="">
 			<p class="text-[15px] tracking-subtitle text-accent font-bold">Recenzii</p>
 			<h2 class="text-gri-text h2-clamp font-bold tracking-h3title leading-tight">Părerile clienților noștri</h2>
@@ -11,21 +35,28 @@
 				Suntem foarte mândri să oferim servicii excepționale care transformă cu adevărat spațiile de locuit ale clienților noștri. Dar nu ne credeți doar pe
 				cuvânt, citiți ce spun clienții noștri.
 			</p>
-			<!-- ! div butoane slider -->
-			<div></div>
-		</div>
-		<!-- ! dreapta -->
-		<div class="bg-blue-50 py-20 px-28 rounded-lg text-center relative">
-			<span class="font-bold text-[26px] tracking-testimoniale text-gri-text">Serviciu exceptional</span>
-			<p class="text-gray-500 mt-9 italic">
-				Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab numquam consequatur sit perferendis sapiente consectetur pariatur. Maxime odit facere
-				nesciunt asperiores, nulla nostrum natus. Placeat adipisci accusamus similique suscipit dolore.
-			</p>
-			<div class="mt-12">
-				<div class="flex flex-col">
-					<span class="text-gri-text font-medium">- Izabela Marioara</span>
+			<!-- ? div butoane slider -->
+			<div class="flex gap-4 items-center mt-9">
+				<div class="py-4 px-9 rounded-[.625rem] bg-blue-400 hover:bg-blue-500" aria-label="Previous slide" id="keen-slider-previous">
+					<Icon name="mdi:arrow-left" class="w-5 h-5 text-white" aria-hidden="true" />
+				</div>
+				<div class="py-4 px-9 rounded-[.625rem] bg-blue-400 hover:bg-blue-500" aria-label="Next slide" id="keen-slider-next">
+					<Icon name="mdi:arrow-right" class="w-5 h-5 text-white" aria-hidden="true" />
 				</div>
 			</div>
+		</div>
+		<!-- ? dreapta -->
+		<div class="bg-blue-50 py-20 px-28 rounded-lg relative keen-slider" id="keen-slider">
+			{
+				recenzii.map((recenzie, index) => (
+					<div class="keen-slider__slide">
+						<span class="font-bold text-[26px] tracking-testimoniale text-gri-text">{recenzie.titlu}</span>
+						<p class="text-gray-500 mt-9 italic">{recenzie.recenzie}</p>
+						<p class="text-gri-text font-medium mt-12">- {recenzie.nume}</p>
+					</div>
+				))
+			}
+
 			<svg
 				class="absolute w-8 h-8 left-24 top-12 row-start-1 row-end-2 col-start-2 col-end-3"
 				clip-rule="evenodd"
@@ -53,3 +84,19 @@
 		</div>
 	</div>
 </section>
+
+<script>
+	import KeenSlider from 'keen-slider';
+	const keenSlider = new KeenSlider(
+		'#keen-slider',
+		{
+			loop: true,
+		},
+		[]
+	);
+	const keenSliderPrevious = document.getElementById('keen-slider-previous');
+	const keenSliderNext = document.getElementById('keen-slider-next');
+
+	keenSliderPrevious.addEventListener('click', () => keenSlider.prev());
+	keenSliderNext.addEventListener('click', () => keenSlider.next());
+</script>
