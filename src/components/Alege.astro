@@ -1,10 +1,11 @@
 ---
 import renovare from '../assets/renovare.jpg';
 import { Image } from 'astro:assets';
+import Link from './Link.astro';
 ---
 
 <section class="mt-24 container flex flex-col md:flex-row gap-8">
-	<div class="">
+	<div>
 		<div class="">
 			<p class="text-[15px] tracking-subtitle text-accent font-bold">De ce să ne alegi</p>
 			<h2 class="text-gri-text h2-clamp font-bold tracking-h3title leading-tight">Alegeți expertiza autentică</h2>
@@ -34,15 +35,10 @@ import { Image } from 'astro:assets';
 			</div>
 
 			<div class="mt-4 md:mt-8">
-				<a
-					href="#"
-					class="block text-center md:inline-block rounded bg-accent px-12 py-3 text-sm font-medium text-white shadow hover:bg-blue-500 focus:outline-none focus:ring active:bg-accent sm:w-auto"
-				>
-					Explorează
-				</a>
+				<Link href="#" theme="primary" text="Explorează" target="_blank" />
 			</div>
 		</div>
 	</div>
 	<!-- !right side image -->
-	<Image alt="renovare casa" src={renovare} format="avif" quality={'mid'} class="rounded-lg object-cover w-full md:w-1/2" />
+	<Image alt="renovare casa" src={renovare} format="avif" quality={'mid'} class="rounded-lg object-cover w-full md:w-1/2" /> 
 </section>

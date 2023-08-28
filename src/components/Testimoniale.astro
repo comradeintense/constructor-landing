@@ -1,102 +1,196 @@
 ---
-// library import
 import { Icon } from 'astro-icon';
-import 'keen-slider/keen-slider.min.css';
 
 const recenzii = [
 	{
-		titlu: 'Serviciu exceptional',
+		titlu: 'O transformare uimitoare!',
 		recenzie:
-			'Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ab numquam consequatur sit perferendis sapiente consectetur pariatur. Maxime odit facere nesciunt asperiores, nulla nostrum natus. Placeat adipisci accusamus similique suscipit dolore.',
-		nume: 'Izabela Marioara',
+			'Nu pot să exprim cât de mulțumit sunt de serviciile acestui site. Echipa lor a transformat complet apartamentul meu plictisitor într-un spațiu modern și elegant. Fiecare detaliu a fost atent luat în considerare, iar rezultatul final vorbește de la sine. Cu siguranță îi voi recomanda tuturor cunoscuților mei!',
+		nume: 'Andrei M.',
 	},
 	{
-		titlu: 'Fantastic nu imi vine a crede',
-		recenzie: 'Trolollol. Placeat adipisci accusamus similique suscipit dolore.',
-		nume: 'Patrunjica Fericita',
+		titlu: 'Experiență fară stres!',
+		recenzie:
+			'Colaborarea cu acest site a fost una dintre cele mai plăcute experiențe. Am avut parte de renovări ample la casa mea și echipa a gestionat totul cu profesionalism și atenție la detalii. ',
+		nume: 'Elena P.',
 	},
 	{
-		titlu: '3',
-		recenzie: 'Maxime odit facere nesciunt asperiores, nulla nostrum natus. Placeat adipisci accusamus similique suscipit dolore',
-		nume: 'Patrunjica Fericita',
+		titlu: 'Calitate excepțională',
+		recenzie:
+			'Căutam pe cineva să repare vechea bucătărie și am găsit aceasta echipă. Nu numai că au făcut reparațiile necesare, dar au adus bucătăria la viață într-un mod în care nu mi-am imaginat vreodată. Materialele folosite sunt de cea mai bună calitate, iar munca depusă se vede în fiecare detaliu',
+		nume: 'Ana D.',
+	},
+	{
+		titlu: 'Recomand cu căldură',
+		recenzie:
+			'Dacă aveți nevoie de servicii de renovare, acesta este site-ul pe care trebuie să-l alegeți. M-au impresionat cu promptitudinea, profesionalismul și pasiunea lor pentru ceea ce fac. Renovarea băii mele a fost mai ușoară decât mă așteptam, datorită echipei lor minunate. Nu ezitați să îi contactați!',
+		nume: 'Ioan C.',
 	},
 ];
-
-let currentIndex = 0;
 ---
 
-<section class="my-24 container">
-	<div class="grid grid-cols-[1fr,2fr] gap-12">
-		<!-- ? stanga -->
-		<div class="">
-			<p class="text-[15px] tracking-subtitle text-accent font-bold">Recenzii</p>
-			<h2 class="text-gri-text h2-clamp font-bold tracking-h3title leading-tight">Părerile clienților noștri</h2>
-			<p class="text-gray-500 font-normal text-base mt-3">
-				Suntem foarte mândri să oferim servicii excepționale care transformă cu adevărat spațiile de locuit ale clienților noștri. Dar nu ne credeți doar pe
-				cuvânt, citiți ce spun clienții noștri.
-			</p>
-			<!-- ? div butoane slider -->
-			<div class="flex gap-4 items-center mt-9">
-				<div class="py-4 px-9 rounded-[.625rem] bg-blue-400 hover:bg-blue-500" aria-label="Previous slide" id="keen-slider-previous">
-					<Icon name="mdi:arrow-left" class="w-5 h-5 text-white" aria-hidden="true" />
+<link href="https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/keen-slider.min.css" rel="stylesheet" />
+
+<section>
+	<div class="mt-24 container">
+		<div class="grid grid-cols-1 gap-8 lg:grid-cols-3 lg:items-center lg:gap-16">
+			<div class="lg:max-w-sm text-left">
+				<p class="text-[15px] tracking-subtitle text-accent font-bold">Recenzii</p>
+
+				<h2 class="text-gri-text h2-clamp font-bold tracking-h3title leading-tight">Părerile clienților noștri</h2>
+				<p class="text-gray-500 font-normal text-base mt-3">
+					Suntem foarte mândri să oferim servicii excepționale care transformă cu adevărat spațiile de locuit ale clienților noștri. Dar nu ne credeți doar pe
+					cuvânt, citiți ce spun clienții noștri.
+				</p>
+
+				<!-- ? Butoane large screen -->
+				<div class="hidden lg:mt-8 lg:flex lg:gap-4">
+					<button aria-label="Previous slide" id="keen-slider-previous-desktop" class="py-4 px-9 rounded-[.625rem] bg-blue-400 hover:bg-blue-500 text-white">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="lucide lucide-move-left"><path d="M6 8L2 12L6 16"></path><path d="M2 12H22"></path></svg
+						>
+					</button>
+
+					<button aria-label="Next slide" id="keen-slider-next-desktop" class="py-4 px-9 rounded-[.625rem] bg-blue-400 hover:bg-blue-500 text-white">
+						<svg
+							xmlns="http://www.w3.org/2000/svg"
+							width="24"
+							height="24"
+							viewBox="0 0 24 24"
+							fill="none"
+							stroke="currentColor"
+							stroke-width="2"
+							stroke-linecap="round"
+							stroke-linejoin="round"
+							class="lucide lucide-move-right"><path d="M18 8L22 12L18 16"></path><path d="M2 12H22"></path></svg
+						>
+					</button>
 				</div>
-				<div class="py-4 px-9 rounded-[.625rem] bg-blue-400 hover:bg-blue-500" aria-label="Next slide" id="keen-slider-next">
-					<Icon name="mdi:arrow-right" class="w-5 h-5 text-white" aria-hidden="true" />
+			</div>
+
+			<!-- ? Slider -->
+			<div class="lg:col-span-2 lg:mx-0 lg:text-center">
+				<div id="keen-slider" class="keen-slider">
+					{
+						recenzii.map((recenzie, index) => (
+							<div class="keen-slider__slide rounded-lg ">
+								<blockquote class="flex h-full flex-col justify-between bg-blue-50 px-12 py-10 relative rounded-lg sm:text-center">
+									<div>
+										<div class="mt-4">
+											<p class="text-2xl font-bold text-gri-text sm:text-3xl">{recenzie.titlu}</p>
+											<p class="mt-4 leading-relaxed text-gray-500 italic py-6">{recenzie.recenzie}</p>
+										</div>
+									</div>
+
+									<footer class="mt-4 text-lg font-medium text-gray-700 sm:mt-6">&mdash; {recenzie.nume}</footer>
+								</blockquote>
+							</div>
+						))
+					}
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="text-black fill-blue-50 absolute left-8 top-4 xs:left-12 sm:left-14 sm:top-8 md:left-20 md:top-8"
+						><path
+							d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"
+						></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"
+						></path></svg
+					>
+					<svg
+						xmlns="http://www.w3.org/2000/svg"
+						width="24"
+						height="24"
+						viewBox="0 0 24 24"
+						fill="none"
+						stroke="currentColor"
+						stroke-width="2"
+						stroke-linecap="round"
+						stroke-linejoin="round"
+						class="text-black fill-blue-50 absolute right-8 bottom-4 xs:right-12 sm:right-14 sm:bottom-8 md:right-20 md:bottom-8"
+						><path
+							d="M3 21c3 0 7-1 7-8V5c0-1.25-.756-2.017-2-2H4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2 1 0 1 0 1 1v1c0 1-1 2-2 2s-1 .008-1 1.031V20c0 1 0 1 1 1z"
+						></path><path d="M15 21c3 0 7-1 7-8V5c0-1.25-.757-2.017-2-2h-4c-1.25 0-2 .75-2 1.972V11c0 1.25.75 2 2 2h.75c0 2.25.25 4-2.75 4v3c0 1 0 1 1 1z"
+						></path></svg
+					>
 				</div>
 			</div>
 		</div>
-		<!-- ? dreapta -->
-		<div class="bg-blue-50 py-20 px-28 rounded-lg relative keen-slider" id="keen-slider">
-			{
-				recenzii.map((recenzie, index) => (
-					<div class="keen-slider__slide">
-						<span class="font-bold text-[26px] tracking-testimoniale text-gri-text">{recenzie.titlu}</span>
-						<p class="text-gray-500 mt-9 italic">{recenzie.recenzie}</p>
-						<p class="text-gri-text font-medium mt-12">- {recenzie.nume}</p>
-					</div>
-				))
-			}
 
-			<svg
-				class="absolute w-8 h-8 left-24 top-12 row-start-1 row-end-2 col-start-2 col-end-3"
-				clip-rule="evenodd"
-				fill-rule="evenodd"
-				stroke-linejoin="round"
-				stroke-miterlimit="2"
-				viewBox="0 0 24 24"
-				xmlns="http://www.w3.org/2000/svg"
-				><path
-					d="m21.301 4c.411 0 .699.313.699.663 0 .248-.145.515-.497.702-1.788.948-3.858 4.226-3.858 6.248 3.016-.092 4.326 2.582 4.326 4.258 0 2.007-1.738 4.129-4.308 4.129-3.24 0-4.83-2.547-4.83-5.307 0-5.98 6.834-10.693 8.468-10.693zm-10.833 0c.41 0 .699.313.699.663 0 .248-.145.515-.497.702-1.788.948-3.858 4.226-3.858 6.248 3.016-.092 4.326 2.582 4.326 4.258 0 2.007-1.739 4.129-4.308 4.129-3.241 0-4.83-2.547-4.83-5.307 0-5.98 6.833-10.693 8.468-10.693z"
-					fill-rule="nonzero"></path></svg
+		<!-- ? Butoane small device -->
+
+		<div class="mt-8 flex justify-center gap-4 lg:hidden">
+			<button
+				aria-label="Previous slide"
+				id="keen-slider-previous"
+				class="rounded-full border border-rose-600 p-4 text-rose-600 transition hover:bg-rose-600 hover:text-white"
 			>
-			<svg
-				class="absolute w-8 h-8 right-24 bottom-12 row-start-1 row-end-2 col-start-2 col-end-3"
-				clip-rule="evenodd"
-				fill-rule="evenodd"
-				stroke-linejoin="round"
-				stroke-miterlimit="2"
-				viewBox="0 0 24 24"
-				xmlns="http://www.w3.org/2000/svg"
-				><path
-					d="m2.699 20c-.411 0-.699-.312-.699-.662 0-.249.145-.516.497-.703 1.788-.947 3.858-4.226 3.858-6.248-3.016.092-4.326-2.582-4.326-4.258 0-2.006 1.738-4.129 4.308-4.129 3.241 0 4.83 2.547 4.83 5.307 0 5.981-6.834 10.693-8.468 10.693zm10.833 0c-.41 0-.699-.312-.699-.662 0-.249.145-.516.497-.703 1.788-.947 3.858-4.226 3.858-6.248-3.015.092-4.326-2.582-4.326-4.258 0-2.006 1.739-4.129 4.308-4.129 3.241 0 4.83 2.547 4.83 5.307 0 5.981-6.833 10.693-8.468 10.693z"
-					fill-rule="nonzero"></path></svg
+				<svg class="h-5 w-5 -rotate-180 transform" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+				</svg>
+			</button>
+
+			<button
+				aria-label="Next slide"
+				id="keen-slider-next"
+				class="rounded-full border border-rose-600 p-4 text-rose-600 transition hover:bg-rose-600 hover:text-white"
 			>
+				<svg class="h-5 w-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+					<path d="M9 5l7 7-7 7" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"></path>
+				</svg>
+			</button>
 		</div>
 	</div>
 </section>
 
-<script>
-	import KeenSlider from 'keen-slider';
+<script type="module">
+	//@ts-ignore
+	import KeenSlider from 'https://cdn.jsdelivr.net/npm/keen-slider@6.8.6/+esm';
+
 	const keenSlider = new KeenSlider(
 		'#keen-slider',
 		{
 			loop: true,
+			slides: {
+				origin: 'center',
+				perView: 1,
+			},
+			breakpoints: {
+				'(min-width: 1024px)': {
+					slides: {
+						origin: 'auto',
+						perView: 1,
+					},
+				},
+			},
 		},
 		[]
 	);
+
 	const keenSliderPrevious = document.getElementById('keen-slider-previous');
 	const keenSliderNext = document.getElementById('keen-slider-next');
 
+	const keenSliderPreviousDesktop = document.getElementById('keen-slider-previous-desktop');
+	const keenSliderNextDesktop = document.getElementById('keen-slider-next-desktop');
+
 	keenSliderPrevious.addEventListener('click', () => keenSlider.prev());
 	keenSliderNext.addEventListener('click', () => keenSlider.next());
+
+	keenSliderPreviousDesktop.addEventListener('click', () => keenSlider.prev());
+	keenSliderNextDesktop.addEventListener('click', () => keenSlider.next());
 </script>

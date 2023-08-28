@@ -1,6 +1,7 @@
 ---
 import { Image } from 'astro:assets';
 import backgroundIMG from '../assets/backgroundhero.jpg';
+import Link from './Link.astro';
 ---
 
 <section class="relative bg-cover bg-center bg-no-repeat">
@@ -26,18 +27,8 @@ import backgroundIMG from '../assets/backgroundhero.jpg';
 					De la baie și instalații, la decorațiuni și iluminat, oferim expertiză completă în amenajări interioare. Realizează-ți viziunea alături de noi!
 				</p>
 				<div class="mt-8 flex flex-wrap gap-4 text-center">
-					<a
-						href="#"
-						class="block w-full rounded bg-accent px-12 py-3 text-sm font-medium text-white shadow hover:bg-blue-500 focus:outline-none focus:ring active:bg-accent sm:w-auto"
-					>
-						Explorează
-					</a>
-					<a
-						href="#"
-						class="block w-full rounded bg-white px-12 py-3 text-sm font-medium text-accent shadow hover:text-blue-500 hover:bg-gray-100 focus:outline-none focus:ring active:text-accent sm:w-auto"
-					>
-						Cere oferta
-					</a>
+					<Link href="#" theme="primary" text="Explorează" classes="w-full sm:w-auto" />
+					<Link href="#" theme="secondary" text="Cere oferta" classes="w-full sm:w-auto" />
 				</div>
 			</div>
 		</div>

@@ -3,6 +3,7 @@ import { Icon } from 'astro-icon';
 import trafalet from '../assets/trafalet.jpg';
 import arhitect from '../assets/arhitect.jpg';
 import { Image } from 'astro:assets';
+import Link from './Link.astro';
 ---
 
 <section class="mt-24 container">
@@ -51,11 +52,7 @@ import { Image } from 'astro:assets';
 				</div>
 			</div>
 			<div class="">
-				<a
-					href="#"
-					class="w-full block rounded text-center md:inline-block bg-accent px-12 py-3 text-sm font-medium text-white shadow hover:bg-blue-500 focus:outline-none focus:ring active:bg-accent sm:w-auto"
-					>Citește mai multe</a
-				>
+				<Link href="#" theme="primary" text="Citește mai multe" classes="w-full block sm:w-auto md:inline-block" />
 			</div>
 		</div>
 	</div>
