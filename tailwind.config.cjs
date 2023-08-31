@@ -36,6 +36,7 @@ module.exports = {
 				h3title: '-0.0238rem',
 				'8years': '.0594rem',
 				testimoniale: '0.0325rem',
+				footertitles: '-0.02625rem',
 			},
 		},
 	},

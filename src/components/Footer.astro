@@ -1,0 +1,98 @@
+---
+import { Icon } from "astro-icon";
+const ServiciiLinks  = [
+  {
+    nume: 'Instalații',
+    path: '#',
+  },
+  {
+    nume: 'Electrice',
+    path: '#',
+  },
+  {
+    nume: 'Renovări',
+    path: '#',
+  },
+  {
+    nume: 'Zugravit',
+    path: '#',
+  },
+  {
+    nume: 'Acoperiș',
+    path: '#',
+  },
+];
+
+const Linkuri = [
+  {
+    nume: 'Despre noi',
+    path: '#',
+  },
+    {
+    nume: 'Servicii',
+    path: '#',
+  },
+    {
+    nume: 'Proiecte',
+    path: '#',
+  },
+    {
+    nume: 'Contact',
+    path: '#',
+  },
+]
+
+---
+
+<footer class="pt-48 pb-20 bg-gray-800 relative">
+  <div class="container absolute -translate-x-1/2 left-1/2 -top-2 py-24 bg-accent">aaa</div>
+  <div class="container text-white grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
+    <div class="flex flex-col gap-4 items-start mr-12">
+      <div class="flex gap-4 items-center justify-center ">
+				  <Icon name="ic:baseline-construction" class="w-10 h-10 text-white" />
+				  <p class="tracking-wide font-bold text-xl">Reno<span class="text-accent">Design</span></p>
+        </div>
+        <p class=" tracking-testimoniale">Să-ți transformi casa într-una de vis, nu a fost niciodată mai ușor.</p>
+			</div>
+
+      <!-- ! Servicii -->
+      <div class="flex flex-col gap-2">
+      <span class="font-bold text-[1.3125rem] tracking-footertitles text-accent">Servicii</span>
+        <div class="flex flex-col mt-4 gap-4">
+          { ServiciiLinks.map((link) =>
+          <a href={link.path} class=" tracking-testimoniale hover:text-accent">{link.nume}</a>
+          ) }
+        </div>
+      </div>
+      <!-- ! Linkuri -->
+      <div class="flex flex-col gap-2">
+      <span class="font-bold text-[1.3125rem] tracking-footertitles text-accent">Linkuri Utile</span>
+        <div class="flex flex-col mt-4 gap-4">
+          { Linkuri.map((item) =>
+          <a href={item.path} class="
+            tracking-testimoniale hover:text-accent">{item.nume}</a>
+          ) }
+        </div>
+      </div>
+      <!-- ! Contacte -->
+      <div class="flex flex-col gap-2">
+      <span class="font-bold text-[1.3125rem] tracking-footertitles text-accent">Contact</span>
+        <div class="flex flex-col items-start mt-4 gap-4">
+          <div class="flex items-center justify-center gap-2">
+            <Icon name="ic:baseline-local-phone" class="w-6 h-6 text-yellow-500" />
+            <p class="tracking-testimoniale hover:text-accent">+071.234.567</p>
+          </div>
+          <div class="flex items-center justify-center gap-2">
+            <Icon name="ic:baseline-mail" class="w-6 h-6 text-yellow-500" />
+            <p class="tracking-testimoniale hover:text-accent">info@gmail.com</p>
+          </div>
+          <div class="flex items-start justify-start gap-2">
+            <Icon name="ic:baseline-location-on" class="w-6 h-6 text-yellow-500" />
+            <p class="tracking-testimoniale hover:text-accent">Str. Carpenului 3, Timisoara</p>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+</footer>
