@@ -1,5 +1,7 @@
 ---
 import { Icon } from "astro-icon";
+import { Image } from 'astro:assets';
+import interior from '../assets/interior.jpg';
 const ServiciiLinks  = [
   {
     nume: 'Instalații',
@@ -44,8 +46,21 @@ const Linkuri = [
 
 ---
 
-<footer class="pt-48 pb-20 bg-gray-800 relative">
-  <div class="container absolute -translate-x-1/2 left-1/2 -top-2 py-24 bg-accent">aaa</div>
+<footer class="pt-20 md:pt-48 pb-20 bg-gray-800 relative ">
+
+  <div class="container hidden md:block rounded-3xl -mt-[19rem] mb-32 py-10 bg-accent relative bg-cover bg-center bg-no-repeat">
+
+    <div class="flex items-center justify-between">
+      <div class="max-w-xl">
+        <p class="text-white uppercase text-[.9375rem] font-bold tracking-ajutor">Ai nevoie de ajutor?</p>
+        <h3 class="text-white text-[2.5rem] font-bold tracking-solutii">Avem soluții la toate nevoile casei tale.</h3>
+      </div>
+      <div class=" bg-white px-14 py-6 rounded-lg text-gri-text uppercase font-bold hover:bg-gri-text hover:text-white transition-all duration-200">
+        <a href="#" />Programează-te</a>
+      </div>
+    </div>
+  </div>
+  
   <div class="container text-white grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-12">
     <div class="flex flex-col gap-4 items-start mr-12">
       <div class="flex gap-4 items-center justify-center ">
