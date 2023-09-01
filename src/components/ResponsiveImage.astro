@@ -1,0 +1,43 @@
+---
+import type { ImageOutputFormat } from "astro";
+import { getImage } from "astro:assets";
+
+type Props = {
+  src: ImageMetadata;
+  alt: string;
+  format?: ImageOutputFormat;
+  sizes: number[];
+  fetchpriority?: "low" | "high" | "auto";
+  loading?: "eager" | "lazy";
+  decoding?: "sync" | "async";
+  class?: string;
+};
+
+async function generateResponsiveImage({
+  src,
+  format,
+  sizes,
+}: Omit<Props, "alt">) {
+  const imgSrcSet = sizes.map(async (size) => {
+    const image = await getImage({ src, width: size, format });
+    return `${image.src} ${size}w`;
+  });
+
+  const imgSrc = await getImage({ src, width: Math.max(...sizes), format });
+
+  return {
+    srcSet: await Promise.all(imgSrcSet),
+    imgSrc: imgSrc.src,
+  };
+}
+
+const { src, sizes, format, alt, fetchpriority, decoding, loading, class: className, ...rest } = Astro.props;
+
+const { srcSet, imgSrc } = await generateResponsiveImage({
+  src,
+  sizes,
+  format,
+});
+---
+
+<img srcset={srcSet.join(", ")} alt={alt} loading={loading} decoding={decoding} fetchpriority={fetchpriority} class={className} src={imgSrc} {...rest}/>

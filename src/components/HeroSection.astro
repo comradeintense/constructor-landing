@@ -2,19 +2,20 @@
 import { Image } from 'astro:assets';
 import backgroundIMG from '../assets/backgroundhero.jpg';
 import Link from './Link.astro';
+import ResponsiveImage from './ResponsiveImage.astro';
 ---
 
 <section class="relative bg-cover bg-center bg-no-repeat">
-	<Image
-		slot="card_image"
-		src={backgroundIMG}
-		format="avif"
-		quality={'mid'}
-		loading="eager"
-		fetchpriority='high'
-		alt="imagine fundal"
-		class="absolute inset-0 w-full h-full object-cover z-0"
-	/>
+	<ResponsiveImage 
+	src={backgroundIMG}
+	slot="card_image"
+	sizes={[568, 900, 1200]}
+	alt="Hero image"
+	format="avif"
+	fetchpriority = "high"
+	loading = "eager"
+	decoding = "sync"
+	class="absolute inset-0 w-full h-full object-cover z-0"/>
 	<div class="absolute inset-0 bg-black/75 sm:bg-transparent sm:from-black/90 sm:to-black/30 sm:bg-gradient-to-r"></div>
 
 	<div class="container">
