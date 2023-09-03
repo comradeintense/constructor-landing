@@ -19,7 +19,7 @@ import { Image } from 'astro:assets';
 		<Card>
 			<picture slot="card_image" >
 				<source type="image/avif" srcset="/images/2x/instalatii.avif 1040w, /images/med/instalatii.avif 520w">
-				<img src="/images/original/instalatii.jpg" alt="imagine instalatii" class="object-cover object-left w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"/>
+				<img fetchpriority="high" src="/images/original/instalatii.jpg" alt="imagine instalatii" class="object-cover object-left w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"/>
 			</picture>
 			<!-- <Image
 				slot="card_image"
@@ -39,7 +39,7 @@ import { Image } from 'astro:assets';
 		<Card>
 			<picture slot="card_image" >
 				<source type="image/avif" srcset="/images/2x/vopsit.avif 1040w, /images/med/vopsit.avif 520w">
-				<img src="/images/original/vopsit.jpg" alt="imagine vopsit" class="object-cover object-left w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"/>
+				<img fetchpriority="high" src="/images/original/vopsit.jpg" alt="imagine vopsit" class="object-cover object-left w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"/>
 			</picture>
 			<!-- <Image
 				slot="card_image"
@@ -59,7 +59,7 @@ import { Image } from 'astro:assets';
 		<Card>
 			<picture slot="card_image" >
 				<source type="image/avif" srcset="/images/2x/climatizare.avif 1040w, /images/med/climatizare.avif 520w">
-				<img src="/images/original/climatizare.jpg" alt="imagine climatizare" class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"/>
+				<img fetchpriority="high" src="/images/original/climatizare.jpg" alt="imagine climatizare" class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"/>
 			</picture>
 			<!-- <Image
 				slot="card_image"
