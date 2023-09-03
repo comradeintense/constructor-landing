@@ -17,7 +17,11 @@ import { Image } from 'astro:assets';
 	<!-- ! carduri -->
 	<div class="mt-8 grid grid-cols-1 xs:grid-cols-2 md:grid-cols-3 gap-6 mx-auto place-items-center xs:place-items-stretch">
 		<Card>
-			<Image
+			<picture slot="card_image" >
+				<source type="image/avif" srcset="/images/2x/instalatii.avif 1040w, /images/med/instalatii.avif 520w">
+				<img src="/images/original/instalatii.jpg" alt="imagine instalatii" class="object-cover object-left w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"/>
+			</picture>
+			<!-- <Image
 				slot="card_image"
 				src={instalatii}
 				format="avif"
@@ -26,14 +30,18 @@ import { Image } from 'astro:assets';
 				fetchpriority='high'
 				alt="imagine parchet"
 				class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"
-			/>
+			/> -->
 			<h3 slot="card_title" class="text-gri-text font-bold text-[1.25rem]">Baie & Instalații</h3>
 			<p slot="card_description" class="text-gray-500 font-normal text-base mt-4">
 				Oferim servicii de instalare și renovare pentru băi, asigurând funcționalitate și estetică de top.
 			</p>
 		</Card>
 		<Card>
-			<Image
+			<picture slot="card_image" >
+				<source type="image/avif" srcset="/images/2x/vopsit.avif 1040w, /images/med/vopsit.avif 520w">
+				<img src="/images/original/vopsit.jpg" alt="imagine vopsit" class="object-cover object-left w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"/>
+			</picture>
+			<!-- <Image
 				slot="card_image"
 				src={vopsit}
 				format="avif"
@@ -42,14 +50,18 @@ import { Image } from 'astro:assets';
 				fetchpriority='high'
 				alt="imagine parchet"
 				class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"
-			/>
+			/> -->
 			<h3 slot="card_title" class="text-gri-text font-bold text-[1.25rem]">Zugrăvit & Decorare</h3>
 			<p slot="card_description" class="text-gray-500 font-normal text-base mt-4">
 				Transformă-ți spațiul cu serviciile noastre profesionale de zugrăvit și decorare.
 			</p>
 		</Card>
 		<Card>
-			<Image
+			<picture slot="card_image" >
+				<source type="image/avif" srcset="/images/2x/climatizare.avif 1040w, /images/med/climatizare.avif 520w">
+				<img src="/images/original/climatizare.jpg" alt="imagine climatizare" class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"/>
+			</picture>
+			<!-- <Image
 				slot="card_image"
 				src={termostat}
 				format="avif"
@@ -58,7 +70,7 @@ import { Image } from 'astro:assets';
 				fetchpriority='high'
 				alt="imagine parchet"
 				class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"
-			/>
+			/> -->
 			<h3 slot="card_title" class="text-gri-text font-bold text-[1.25rem]">Climatizare</h3>
 			<p slot="card_description" class="text-gray-500 font-normal text-base mt-4">
 				Soluții moderne de încălzire, aer condiționat și ventilație pentru confortul tău.
