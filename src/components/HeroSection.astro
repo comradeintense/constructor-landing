@@ -8,11 +8,11 @@ import ResponsiveImage from './ResponsiveImage.astro';
 <section class="relative bg-cover bg-center bg-no-repeat">
   <picture>
       <!-- Image A for mobile -->
-      <source type="image/webp" media="(max-width: 767px)" srcset="/uidaily/constructor/mobile_1x.webp 1x, /uidaily/constructor/mobile_2x.webp 2x, /uidaily/constructor/mobile_3x.webp 3x">
+      <source type="image/webp" media="(max-width: 767px)" srcset="/mobile_1x.webp 1x, /mobile_2x.webp 2x, /mobile_3x.webp 3x">
       <!-- Image B for larger screens -->
-      <source type="image/webp" media="(min-width: 768px)" srcset="/uidaily/constructor/desktop_1x.webp 1x, /uidaily/constructor/desktop_2x.webp 2x, /uidaily/constructor/desktop_3x.webp 3x">
+      <source type="image/webp" media="(min-width: 768px)" srcset="/desktop_1x.webp 1x, /desktop_2x.webp 2x, /desktop_3x.webp 3x">
       <!-- Fallback Image -->
-      <img decoding="async" fetchpriority="high" loading="eager" class="absolute inset-0 w-full h-full object-cover z-0" src="/uidaily/constructor/fallback.jpg" alt="Imagine care arata un interior renovat">
+      <img decoding="async" fetchpriority="high" loading="eager" class="absolute inset-0 w-full h-full object-cover z-0" src="/fallback.jpg" alt="Imagine care arata un interior renovat">
   </picture>
 
   <!-- <ResponsiveImage 
