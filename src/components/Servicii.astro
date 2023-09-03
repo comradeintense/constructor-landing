@@ -77,42 +77,54 @@ import { Image } from 'astro:assets';
 			</p>
 		</Card>
 		<Card>
-			<Image
+			<picture slot="card_image" >
+				<source type="image/avif" srcset="/images/2x/zidarie.avif 1040w, /images/med/zidarie.avif 520w">
+				<img loading="lazy" src="/images/original/zidarie.jpg" alt="imagine zidarie" class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"/>
+			</picture>
+			<!-- <Image
 				slot="card_image"
 				src={pereti}
 				format="avif"
 				quality={'mid'}
 				alt="imagine parchet"
 				class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"
-			/>
+			/> -->
 			<h3 slot="card_title" class="text-gri-text font-bold text-[1.25rem]">Tavane & Pereți</h3>
 			<p slot="card_description" class="text-gray-500 font-normal text-base mt-4">
 				Specialiști în recondiționat pereți și plafoane din gips-carton de cea mai bună calitate.
 			</p>
 		</Card>
 		<Card>
-			<Image
+			<picture slot="card_image" >
+				<source type="image/avif" srcset="/images/2x/parchet.avif 1040w, /images/med/parchet.avif 520w">
+				<img loading="lazy" src="/images/original/parchet.jpg" alt="imagine parchet" class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"/>
+			</picture>
+			<!-- <Image
 				slot="card_image"
 				src={parchet}
 				format="avif"
 				quality={'mid'}
 				alt="imagine parchet"
 				class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"
-			/>
+			/> -->
 			<h3 slot="card_title" class="text-gri-text font-bold text-[1.25rem]">Izolație & Pardoseli</h3>
 			<p slot="card_description" class="text-gray-500 font-normal text-base mt-4">
 				Protejează-ți casa cu izolație de top și alege din varietatea noastră de pardoseli și parchet.
 			</p>
 		</Card>
 		<Card>
-			<Image
+			<picture slot="card_image" >
+				<source type="image/avif" srcset="/images/2x/electric.avif 1040w, /images/med/electric.avif 520w">
+				<img loading="lazy" src="/images/original/electric.jpg" alt="imagine electric" class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"/>
+			</picture>
+			<!-- <Image
 				slot="card_image"
 				src={electricity}
 				format="avif"
 				quality={'mid'}
 				alt="imagine panou electric"
 				class="object-cover object-center w-full rounded-t-[.75rem] h-72 dark:bg-gray-500"
-			/>
+			/> -->
 			<h3 slot="card_title" class="text-gri-text font-bold text-[1.25rem]">Electricitate & Iluminat</h3>
 			<p slot="card_description" class="text-gray-500 font-normal text-base mt-4">
 				Servicii profesionale de electricitate și soluții moderne de iluminat pentru casa ta.
